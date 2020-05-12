@@ -1,5 +1,4 @@
-# TODO: __getattr__ raise exception?
-# TODO: reset "updated"
+# TODO: threading
 import time, json, threading
 from requests import get
 
