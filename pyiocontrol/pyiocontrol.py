@@ -1,4 +1,3 @@
-# TODO: threading
 import time, json, threading
 from requests import get
 
