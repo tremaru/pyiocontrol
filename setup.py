@@ -1,12 +1,12 @@
 from distutils.core import setup
-#from distutils.extension import Extension
+from distutils.extension import Extension
 
 def readme():
     with open('README.md') as readme:
         return readme.read()
 
 setup(name='pyiocontrol',
-    version='0.0.1',
+    version='0.0.2',
     description='iarduino.ru module for Raspberry Pi',
     long_description=readme(),
     classifiers=[
@@ -16,4 +16,8 @@ setup(name='pyiocontrol',
     author='iarduino.ru',
     author_email='shop@iarduino.ru',
     license='MIT',
+    ext_modules = [Extension(
+        name="pyiocontrol",
+        sources=["pyiocontrol/pyiocontrol.py"]
+        )]
 )
