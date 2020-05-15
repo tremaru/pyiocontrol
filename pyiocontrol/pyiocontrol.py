@@ -19,7 +19,7 @@ num_tries = 2
 fl_index = 3
 
 
-class panel:
+class Panel:
 
     __name = ""
     __key = None
@@ -60,7 +60,7 @@ class panel:
     def __getattr__(self, item):
 
         if item.startswith("_"):
-            super(panel, self).__getattr__(item)
+            super(Panel, self).__getattr__(item)
 
         else:
             self.readUpdate()
@@ -76,7 +76,7 @@ class panel:
     def __setattr__(self, item, new_val):
 
         if item.startswith("_") or item == "localUpdated" or item == "siteUpdated":
-            super(panel, self).__setattr__(item, new_val)
+            super(Panel, self).__setattr__(item, new_val)
 
         #print(new_val, self.__state[item][val_index])
         elif new_val != self.__state[item][val_index]:
