@@ -9,13 +9,13 @@ def readme():
 
 setup(
     name="pyiocontrol",
-    version="0.0.2",
-    description="iarduino.ru module for Raspberry Pi",
+    version="0.7.3",
+    description="iocontrol.ru module for iocontorl.ru api",
     long_description=readme(),
     classifiers=["Programming Language :: Python :: 3"],
     url="http://github.com/tremaru/pyiocontrol",
-    author="iarduino.ru",
-    author_email="shop@iarduino.ru",
+    author="iocontrol.ru",
+    author_email="info@iocontrol.ru",
     include_package_data=True,
     packages=find_packages(exclude=("tests",)),
     license="MIT",

@@ -1,1 +1,1 @@
-rm -r dist/ build/ MANIFEST
+rm -r dist/ build/ MANIFEST pyiocontrol.egg*
