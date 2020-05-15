@@ -12,6 +12,7 @@ setup(
     version="0.7.3",
     description="iocontrol.ru module for iocontorl.ru api",
     long_description=readme(),
+    long_description_content_type="text/markdown",
     classifiers=["Programming Language :: Python :: 3"],
     url="http://github.com/tremaru/pyiocontrol",
     author="iocontrol.ru",
