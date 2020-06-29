@@ -108,7 +108,8 @@ class Panel:
             #print("updated")
             self.__read_timestamp = self.__millis()
 
-            req = "https://iocontrol.ru/api/readDataAll/" + self.__name + "/0"
+            req = "https://iocontrol.ru/api/readDataAll/" + self.__name\
+                    + "/" + str(self.__key)
 
             #print(req)
             response = get(req)
