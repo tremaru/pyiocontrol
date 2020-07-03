@@ -9,7 +9,7 @@ def readme():
 
 setup(
     name="pyiocontrol",
-    version="0.7.4",
+    version="0.7.5",
     description="iocontrol.ru module for iocontorl.ru api",
     long_description=readme(),
     long_description_content_type="text/markdown",
