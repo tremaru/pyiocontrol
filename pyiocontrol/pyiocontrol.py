@@ -39,7 +39,6 @@ class Panel:
 
     __state = {}
 
-    #b = threading.Barrier(1)
 
     def __init__(self, name, key = None):
 
@@ -99,8 +98,14 @@ class Panel:
 
                 raise KeyError('переменной с таким именем нет в панели')
 
+    #condition = threading.Condition()
     #def setFlag(self):
+        #self.condition.acquire()
+        #self.condition.wait()
         #self.siteUpdated = True
+        #self.condition.release()
+
+    #b = threading.Barrier(1, action = self.setFlag)
 
     def readUpdate(self):
 
@@ -201,18 +206,28 @@ class Panel:
 
 
     def writeUpdate(self):
-        #global siteUpdated
+
+        #self.b.wait()
+        #if self.b.wait() == 0:
+            #self.siteUpdated = True
+        #self.condition.acquire()
+        #c = threading.activeCount()
+        #print(c)
 
         # getting the time this function called
         currentTime = self.__millis()
 
-        # if time hasn't come - returning error
+        # if time hasn't come - return error
         if abs(currentTime - self.__write_timestamp) < self.__write_interval:
             self.siteUpdated = False
-            threading.Timer(self.__write_interval / 1000, self.writeUpdate).start()
+            #threading.Timer(self.__write_interval / 1000, self.writeUpdate).start()
             #siteUpdated = False
             self.lastStatus = intervalError
             return intervalError
+#        else:
+            #self.setFlag()
+            #self.condition.notify()
+            #self.condition.release()
 
         # writing timestamp of possible request
         self.__write_timestamp = self.__millis()
@@ -233,7 +248,7 @@ class Panel:
 
         if writeFlag:
 
-            #threading.Timer(self.__write_interval / 1000, self.writeUpdate).start()
+            threading.Timer(self.__write_interval / 1000, self.writeUpdate).start()
 #           print(req)
             ####
 #           for k in self.__state:
@@ -276,7 +291,7 @@ class Panel:
 
             #if failed_flag == False:
             #self.b.wait()
-            #self.siteUpdated = True
+            self.siteUpdated = True
             #siteUpdated = True
             self.lastStatus = OK
 
