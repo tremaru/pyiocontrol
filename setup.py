@@ -20,5 +20,5 @@ setup(
     include_package_data=True,
     packages=find_packages(exclude=("tests",)),
     license="MIT",
-    install_requires=["requests==2.23.0"],
+    install_requires=["requests==2.31.0"],
 )
